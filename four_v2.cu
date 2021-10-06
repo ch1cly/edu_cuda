@@ -28,10 +28,17 @@ int main()
 
     cudaStatus = cudaMalloc((void**)&p_a, sizeof(unsigned int));
     
-    cudaStatus = cudaMemcpy(p_a, &a, sizeof(unsigned int), cudaMemcpyHostToDevice);
+    
    
     if (cudaStatus != cudaSuccess) {
         fprintf(stderr, "cudaMalloc failed!");
+        return 1;
+    }
+
+    cudaStatus = cudaMemcpy(p_a, &a, sizeof(unsigned int), cudaMemcpyHostToDevice);
+
+    if (cudaStatus != cudaSuccess) {
+        fprintf(stderr, "cudaMemcpyHostToDevice failed!");
         return 1;
     }
 
