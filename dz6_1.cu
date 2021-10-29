@@ -5,9 +5,9 @@
 #include <cmath>
 
 #define BLOCK_SIZE 16
-// тип, который будут иметь элементы матриц
+// ГІГЁГЇ, ГЄГ®ГІГ®Г°Г»Г© ГЎГіГ¤ГіГІ ГЁГ¬ГҐГІГј ГЅГ«ГҐГ¬ГҐГ­ГІГ» Г¬Г ГІГ°ГЁГ¶
 #define BASE_TYPE double
-// функция перемножения матриц
+// ГґГіГ­ГЄГ¶ГЁГї ГЇГҐГ°ГҐГ¬Г­Г®Г¦ГҐГ­ГЁГї Г¬Г ГІГ°ГЁГ¶
 __global__ void matrixMult(const BASE_TYPE* A, const
 	BASE_TYPE* B, BASE_TYPE* C, int Acols, int Bcols)
 {
@@ -37,7 +37,7 @@ int main()
 	cudaEvent_t start, stop;
 	cudaEventCreate(&start);
 	cudaEventCreate(&stop);
-	// количество строк и столбцов матрицы
+	// ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±ГІГ°Г®ГЄ ГЁ Г±ГІГ®Г«ГЎГ¶Г®Гў Г¬Г ГІГ°ГЁГ¶Г»
 	int Arows = 100;
 	int Acols = 200;
 	int Brows = Acols;
@@ -103,6 +103,7 @@ int main()
 	cudaMemcpy(h_BA, d_BA, Csize, cudaMemcpyDeviceToHost);
 
 	bool b = true;
+	//РІС‹РЅРµСЃС‚Рё РІ __gpu__
 	for (int i = 0; i < Csize; ++i) {
 		if (abs(h_AB[i] - h_BA[i]) > 1e-9) {
 			b = false;
