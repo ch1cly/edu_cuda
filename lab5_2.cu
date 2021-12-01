@@ -10,7 +10,7 @@
 __global__ void calc(float *c,const float* a,const float* b)
 {
     int i = threadIdx.x;
-    c[i] = a[i]*b[i];
+    c[i] = __fmul_rn(b[i], a[i]);
 }
 
 int main(){
