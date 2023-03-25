@@ -2,3 +2,7 @@
 
 exercises from
 https://kpfu.ru//staff_files/F1113663154/Tumakov___Tekhnologiya_programmirovaniya_CUDA.pdf
+
+ch - chapter / глава
+lw - laboratory work / лабораторная работа
+hw - homework / домашняя работа
